@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link href="/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <script src="./lib/jquery/jquery.min.js"></script>
+    
+</head>
+<body>
+        
+    <!-- Default form register -->
+    
+<form class="text-center border border-light p-5" name="registerform" action="/RegisterID" method="POST">
+
+    <p class="h4 mb-4">Register</p>
+    <p class="h4 mb-4">산업보안학과 학생만 가능합니다.</p>
+
+    <div class="form-row mb-4">
+        <div class="col">
+            <!-- First name -->
+            <input type="text" id="defaultRegisterFormFirstName" class="form-control" placeholder="이름" name="name" required >
+        </div>
+        
+        <div class="col">
+            <!-- StudentID -->
+            <input type="number" id="studentID" class="form-control" placeholder="학번" name="studentID" required>
+        </div>
+    </div>
+
+    <!-- E-mail -->
+    <input type="email" id="defaultRegisterFormEmail" class="form-control mb-4" placeholder="E-mail" name="email" required>
+
+    <!-- Password -->
+    <input type="password" id="defaultRegisterFormPassword" class=" form-control pw" placeholder="비밀번호" aria-describedby="defaultRegisterFormPasswordHelpBlock" name="password" required pattern=".{8,20}">
+    <small id="defaultRegisterFormPasswordHelpBlock" class="form-text text-muted mb-4">
+        9~20글자
+    </small>
+
+    <input type="password" id="Passwordcheck" class="form-control pw" placeholder="비밀번호확인" aria-describedby="defaultRegisterFormPasswordHelpBlock" name="pwdcheck" required pattern=".{8,20}">
+    <p id="defaultRegisterFormPhoneHelpBlock" class="form-text text-muted mb-4" >
+        비밀번호 확인         
+    
+    <span id="alert-success" style="display: none;">비밀번호가 일치합니다.</span>
+    <span id="alert-danger" style="display: none; color: #d92742; font-weight: bold; ">비밀번호가 일치하지 않습니다.</span>
+    </p>
+    <input type="text" id="nickName" class="form-control" placeholder="닉네임" name="nickname" required >
+    <small id="defaultRegisterFormPhoneHelpBlock" class="form-text text-muted mb-4">    
+    바꾸려면 귀찮습니다 신중히 생각해주세요
+    </small>
+    <!-- CheckPassword 
+    <input type="password" id="defaultRegisterFormPasswordcheck" class="form-control" placeholder="비밀번호" aria-describedby="defaultRegisterFormPasswordHelpBlock" name="passwordcheck" required>
+    <small id="defaultRegisterFormPasswordHelpBlock" class="form-text text-muted mb-4">
+    </small>-->
+    <!-- CODE -->
+    <input type="text" id="code" class="form-control" placeholder="가입코드" name="code" required>
+    <small id="defaultRegisterFormPhoneHelpBlock" class="form-text text-muted mb-4">
+        없으면 가입이 불가합니다.
+    </small>
+
+    <!-- Sign up button -->
+   
+    <button class="btn btn-info my-4 btn-block" type="submit">Register</button>
+    <a href="/" class="btn btn-info" role="button">Home</a>
+    <!-- Social register type = "submit"-->
+
+    <hr>
+
+</form>
+<!-- Default form register -->
+<script src = "./js/pwdcheck.js"></script>
+
+
+</body>
+</html>

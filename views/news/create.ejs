@@ -1,0 +1,99 @@
+<%- include('../common/top.ejs') %>
+<script src="/lib/jquery/jquery.min.js"></script>
+
+</head>
+<!-- head -->
+
+<body id="page-top">
+  <!-- 상단 nav -->
+  <%- include('../common/nav.ejs') %>
+
+  <div id="home" class="intro route bg-image" style="background-image: url(/img/news.jpg)">
+    <div class="overlay-itro"></div>
+    <div class="intro-content display-table">
+      <div class="table-cell">
+        <div class="container">
+          <h1 class="intro-title mb-4">글쓰기</h1>
+          <p class="intro-subtitle"><span class="text-slider-items">NEWS, 글쓰기, Typing, 글쓰기, Typing</span><strong class="text-slider"></strong></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- form-->
+  <div class="box-shadow-full">
+    <p class="lead text-info">
+            <div class="title-box-2">
+            <h5 class="title-left text-center">
+              글쓰기
+            </h5>
+                <h5 class = "text-center">
+                News
+              </h5>
+            </div>
+        
+
+
+
+
+
+
+
+
+
+
+<!-- 여기부터 글쓰기 form 란 인데 뭔가 더 이쁘게 만들 수 있을 것 같습니다-->
+
+
+
+            <div class ="container">
+                <div class="row justify-content-center">
+                    <div class="media-container-column col-lg-8" data-form-type="formoid">
+                    
+                            <form class="text-center border border-light p-5" action="/news/post" method="post" name="registerform">
+                        
+                                    
+                                    <div class="form-group">
+                                        <h4>Title</h4>
+                                        <input type="text"  class="form-control" placeholder="제목을 입력하시오"name="제목" id="제목" required>
+                                    </div>
+                                        <div class="form-group">
+                                            <h4>Download link</h4>
+                                            <input type="text"  class="form-control" placeholder="링크를 입력하시오"name="reference" id="reference" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <h4>Description</h4>
+                                            <textarea id="description" class="md-textarea form-control" rows="20" name="description" required></textarea>
+                                        </div>
+                                <span class="input-group-btn">
+                                    <button href="" type="submit" class="btn btn-primary btn-form display-4">포스팅</button>
+                                </span>
+                            </form>
+                    </div>
+                </div>
+            </div>
+            <button class="btn btn-success" onclick="location.href='/news'" type ="button" >돌아가기</button>
+
+
+<!-- 여기까지 글쓰기 form 란 인데 뭔가 더 이쁘게 만들 수 있을 것 같습니다-->
+
+  
+        
+    </p>
+</div>
+   <!-- JavaScript Libraries -->
+   <script src="/lib/jquery/jquery.min.js"></script>
+   <script src="/lib/jquery/jquery-migrate.min.js"></script>
+   <script src="/lib/popper/popper.min.js"></script>
+   <script src="/lib/bootstrap/js/bootstrap.min.js"></script>
+   <script src="/lib/easing/easing.min.js"></script>
+   <script src="/lib/counterup/jquery.waypoints.min.js"></script>
+   <script src="/lib/counterup/jquery.counterup.js"></script>
+   <script src="/lib/owlcarousel/owl.carousel.min.js"></script>
+   <script src="/lib/lightbox/js/lightbox.min.js"></script>
+   <script src="/lib/typed/typed.min.js"></script>
+ 
+   <!-- Template Main Javascript File -->
+   <script src="/js/main.js"></script>
+</body>
+</html>
+

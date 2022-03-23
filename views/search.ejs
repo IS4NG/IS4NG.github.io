@@ -1,0 +1,82 @@
+<%- include('./common/top.ejs') %>
+<script src="/lib/jquery/jquery.min.js"></script>
+
+</head>
+<!-- head -->
+
+<body id="page-top">
+  <!-- 상단 nav -->
+  <%- include('./common/nav.ejs') %>
+  <div id="home" class="intro route bg-image" style="background-image: url(/img/search.jpg)">
+    <div class="overlay-itro"></div>
+    <div class="intro-content display-table">
+      <div class="table-cell">
+        <div class="container">
+          <!--<p class="display-6 color-d">Hello, world!</p>-->
+          <h1 class="intro-title mb-4">SEARCH</h1>
+          <p class="intro-subtitle"><span class="text-slider-items">S,E,A,R,C,H</span><strong class="text-slider"></strong></p>
+          <!-- <p class="pt-3"><a class="btn btn-primary btn js-scroll px-4" href="#about" role="button">Learn More</a></p> -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+ <!--/ Contents START /-->
+ <section id="about" class="about-mf sect-pt4 route">
+  <div class="container">
+    <br>
+    <br>
+    <!--검색창-->
+    <div class="container input-group mb-2">
+      <input class="form-control" id="search-input">
+      <button class="input-group-append btn btn-outline-primary" id="search"><i class="fa-solid fa-magnifying-glass"></i></button>
+    </div>
+    
+   
+    <!--아래 EJS사용 글목록-->
+    
+
+  <section id="about" class="about-mf sect-pt4 route">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="box-shadow-full">    
+               <!-- EJS사용 -->
+
+               <% for (var i=0; i<글목록.length; i++){ %>
+                
+                  <ul class="list-group">
+                    <li class="list-group-item">
+      
+        
+                            <h4><a href = '../detail/<%= 글목록[i]._id %>'> <%= i+1%>: <%= 글목록[i].title %></a></h4>
+                            <% if(isAuthenticated){ %>
+                            <a href="/edit/<%= 글목록[i]._id %>" class="btn btn-outline-success" role="button">Edit</a>
+                            <button type="submit" class="delete btn btn-danger "  data-id = "<%= 글목록[i]._id %>" >Delete</button> <!--class에 delete-->
+                            <script src = "../js/delete.js"></script><!-- Ajax사용 -->
+                     
+                            <% }%>
+       
+                         
+                    </li>
+                  </ul>
+                <% } %>
+              
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>     
+
+                
+
+
+
+
+  </div>
+</section>
+  <script src="/js/search.js"></script>
+
+
+<!-- JavaScript Libraries -->
+<%- include('./common/bottom.ejs') %>

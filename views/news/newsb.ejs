@@ -1,0 +1,56 @@
+<%- include('../common/top.ejs') %>
+</head>
+
+<body id="page-top">
+  <!-- 상단 nav -->
+  <%- include('../common/nav.ejs') %>
+  <div id="home" class="intro route bg-image" style="background-image: url(/img/news.jpg)">
+    <div class="overlay-itro"></div>
+    <div class="intro-content display-table">
+      <div class="table-cell">
+        <div class="container">
+          <!--<p class="display-6 color-d">Hello, world!</p>-->
+          <h1 class="intro-title mb-4">News</h1>
+          <p class="intro-subtitle"><span class="text-slider-items">소식통, 수상, 진로정보, 취업정보</span><strong class="text-slider"></strong></p>
+          <!-- <p class="pt-3"><a class="btn btn-primary btn js-scroll px-4" href="#about" role="button">Learn More</a></p> -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Post -->
+  <article class="post">
+    <header>
+      <div class="title">
+        <h2><a href="#"><%= data.title %></a></h2>
+        <p>reference : <a href = "<%= data.reference %>"><%= data.reference %></a></p>
+      </div>
+      <div class="meta">
+        <time class="published"><%= data.time %></time>
+        <a href="#" class="author"><span class="name"><%= data.Author %></span><img src="img/jun.jpg" alt="" /></a>
+      </div>
+    </header>
+    <div class ="text-break text-monospace text-xl-left" style="white-space: pre-wrap"><p><%=data.description%></p></div>
+    <!-- 
+    <p>Mauris neque quam, fermentum ut nisl vitae, convallis maximus nisl. Sed mattis nunc id lorem euismod placerat. Vivamus porttitor magna enim, ac accumsan tortor cursus at. Phasellus sed ultricies mi non congue ullam corper. Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
+    <p>Nunc quis dui scelerisque, scelerisque urna ut, dapibus orci. Sed vitae condimentum lectus, ut imperdiet quam. Maecenas in justo ut nulla aliquam sodales vel at ligula. Sed blandit diam odio, sed fringilla lectus molestie sit amet. Praesent eu tortor viverra lorem mattis pulvinar feugiat in turpis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce ullamcorper tellus sit amet mattis dignissim. Phasellus ut metus ligula. Curabitur nec leo turpis. Ut gravida purus quis erat pretium, sed pellentesque massa elementum. Fusce vestibulum porta augue, at mattis justo. Integer sed sapien fringilla, dapibus risus id, faucibus ante. Pellentesque mattis nunc sit amet tortor pellentesque, non placerat neque viverra. </p> 
+    -->
+    <a href="/Project/2022" class="btn btn-outline-success" role="button">돌아가기</a> 
+  </article>            
+
+      <!-- JavaScript Libraries -->
+      <script src="/lib/jquery/jquery.min.js"></script>
+      <script src="/lib/jquery/jquery-migrate.min.js"></script>
+      <script src="/lib/popper/popper.min.js"></script>
+      <script src="/lib/bootstrap/js/bootstrap.min.js"></script>
+      <script src="/lib/easing/easing.min.js"></script>
+      <script src="/lib/counterup/jquery.waypoints.min.js"></script>
+      <script src="/lib/counterup/jquery.counterup.js"></script>
+      <script src="/lib/owlcarousel/owl.carousel.min.js"></script>
+      <script src="/lib/lightbox/js/lightbox.min.js"></script>
+      <script src="/lib/typed/typed.min.js"></script>
+    
+      <!-- Template Main Javascript File -->
+      <script src="/js/main.js"></script>
+</body>
+</html>

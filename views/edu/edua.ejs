@@ -1,0 +1,109 @@
+<%- include('../common/top.ejs') %>
+<script src="/lib/jquery/jquery.min.js"></script>
+
+</head>
+<!-- head -->
+
+<body id="page-top">
+  <!-- 상단 nav -->
+  <%- include('../common/nav.ejs') %>
+  <div id="home" class="intro route bg-image" style="background-image: url(/img/edu.jpg)">
+    <div class="overlay-itro"></div>
+    <div class="intro-content display-table">
+      <div class="table-cell">
+        <div class="container">
+          <!--<p class="display-6 color-d">Hello, world!</p>-->
+          <h1 class="intro-title mb-4">Education</h1>
+          <p class="intro-subtitle"><span class="text-slider-items">교육자료, 참고자료, Mentoring, Growing</span><strong class="text-slider"></strong></p>
+          <!-- <p class="pt-3"><a class="btn btn-primary btn js-scroll px-4" href="#about" role="button">Learn More</a></p> -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+ <!--/ Contents START /-->
+ <section id="about" class="about-mf sect-pt4 route">
+  <div class="container">
+    <!-- 임시 삭제 - 교육자료 글쓰기 기능 -->
+    <!-- <a href="/edu/create" class="btn btn-info btn-outline-primary float-right" role="button">글쓰기</a> -->
+
+    <!--아래 EJS사용 글목록-->
+    <!-- post list using EJS-->
+    <section id="about" class="about-mf sect-pt4 route">
+      <div class="container">
+        <h4>글목록</h4>
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="box-shadow-full"> 
+              <!-- post list -->
+              <ul class="posts">
+                <li>
+                  <article>
+                    <header> 
+                      <h4><a href = 'https://www.notion.so/b327328d8b2c4ab9800c3d8e28151d13'>기초반 교육일정 및 자료</a></h4>
+                    </header>
+                  </article>
+                </li>
+                <% if(isAuthenticated){ %>
+                  <li>
+                    <article>
+                      <header> 
+                        <h4><a href = 'https://www.notion.so/b327328d8b2c4ab9800c3d8e28151d13'> 기초반 강의메뉴얼 FOR 운영진</a></h4>
+                      </header>
+                    </article>
+                  </li>
+                <% }%>
+              </ul>
+              <!-- 
+                <% for (var i=0; i<글목록.length; i++){ %>
+                  <div class="news">
+                    <ul class="list-group">
+                      <li class="list-group-item">
+                        <article>
+                          <header>
+                            <h4><a href = '<%= 글목록[i].reference %>'> <%= i+1%>: <%= 글목록[i].title %></a></h4>
+                            <time class="published" datetime="2015-10-20">October 20, 2015</time>
+                          </header>
+                          <% if(isAuthenticated){ %>
+                            <a href="/Project/2022/edit/<%= 글목록[i]._id %>" class="btn btn-outline-success" role="button">Edit</a>
+                            <button type="submit" class="delete btn btn-danger "  data-id = "<%= 글목록[i]._id %>" >Delete</button>
+                            <script src = "../js/delete.js"></script>
+                          <% }%>
+                        </article>
+                      </li>
+                  </div> 
+                <% } %> 
+              -->
+
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>   
+ 
+
+
+
+
+  </div>
+</section>
+  <script src="/js/search.js"></script>
+
+      <!-- JavaScript Libraries -->
+      
+      <script src="/lib/jquery/jquery-migrate.min.js"></script>
+      <script src="/lib/popper/popper.min.js"></script>
+      <script src="/lib/bootstrap/js/bootstrap.min.js"></script>
+      <script src="/lib/easing/easing.min.js"></script>
+      <script src="/lib/counterup/jquery.waypoints.min.js"></script>
+      <script src="/lib/counterup/jquery.counterup.js"></script>
+      <script src="/lib/owlcarousel/owl.carousel.min.js"></script>
+      <script src="/lib/lightbox/js/lightbox.min.js"></script>
+      <script src="/lib/typed/typed.min.js"></script>
+      
+      <!-- Template Main Javascript File  -->
+      <script src="/js/main.js"></script>
+     
+</body>
+</html>
