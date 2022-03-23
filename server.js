@@ -62,15 +62,15 @@ passport.use(new LocalStrategy({
       bcrypt.hash(입력한비번, salt, function(err, hash) {
           // Find hash in your password DB.
           db.collection('User').findOne({ email: 입력한아이디 }, function (에러, 결과) {
-            if (에러) return done(에러)
-              //중간에 암호화해야함
-            if (!결과) return done(null, false, { message: '존재하지않는 아이디요' }) //done(서버에러, 성공시 사용자 db데이터 보냄, 에러메시지)
-            console.log(입력한비번, hash);
-            if (bcrypt.compare(hash, 결과.비밀번호)) {//bcrypt.compare(password, user[0].user_pw);
-              return done(null, 결과)
-            } else {
-              return done(null, false, { message: '비번틀렸어요' })
-            }
+            if (에러) return done(에러);
+            if (!결과) return done(null, false, { message: '존재하지않는 아이디요' });
+              const match = bcrypt.compareSync(입력한비번,결과.비밀번호);
+                console.log(match);
+              if(match){
+                return done(null, 결과);
+              }else{
+                return done(null, false, { message: '비번틀렸어요' });
+              }
           });//db닫기  
   });//bycrypt hash 닫기
   }); // gensalt 닫기
