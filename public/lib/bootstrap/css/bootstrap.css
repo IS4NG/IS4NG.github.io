@@ -4,6 +4,15 @@
  * Copyright 2011-2018 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
+
+ @import url('https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap');
+ @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&family=Titillium+Web&display=swap');
+
+  /* 
+  font-family: 'Titillium Web', sans-serif;
+  font-family: 'Nanum Gothic', sans-serif;
+  */
+
 :root {
   --blue: #007bff;
   --indigo: #6610f2;
@@ -42,7 +51,7 @@
 }
 
 html {
-  font-family: sans-serif;
+  font-family: 'Nanum Gothic', sans-serif;
   line-height: 1.15;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -60,7 +69,8 @@ article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  /* font for tool bar / moving word / list title / post title in list */
+  font-family: 'Nanum Gothic', sans-serif;  
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
@@ -8743,8 +8753,9 @@ button.bg-dark:focus {
   }
 }
 
+/* font for post (2022b) */
 .text-monospace {
-  font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-family: 'Nanum Gothic', sans-serif;
 }
 
 .text-justify {
@@ -9131,9 +9142,11 @@ ul.posts {
       padding: 3.75em 3em 3.3em 3em;
     }
 
+      /* font for post title */
       .post > header .title h2 {
         font-weight: 900;
         font-size: 1.5em;
+        font-family: 'Nanum Gothic', sans-serif;
       }
 
       .post > header .title > :last-child {
@@ -9159,7 +9172,7 @@ ul.posts {
       .post > header .meta .published {
         color: #3c3b3b;
         display: block;
-        font-family: "Raleway", Helvetica, sans-serif;
+        font-family: 'Nanum Gothic', sans-serif;
         font-size: 0.7em;
         font-weight: 800;
         letter-spacing: 0.25em;
@@ -9392,5 +9405,81 @@ ul.posts {
 
   }
 
+  /* 글목록 가운데 정렬 */
+  .hyun_center{
+    text-align: center;
+    margin-bottom: 50px !important;
+  }
+  /* 검색창  */
+  .hyun_searchbar{
+    display: block !important;
+    flex: none !important;
+    width:  88%!important;
+    border: 0;
+  }
+  .hyun_div{
+  padding: 0px !important;
+  background:white !important;
+	background-color: white !important;
+  width: 25% !important;  
+  border-radius: 5px !important;
+  margin-right: 15px !important;
+  }
+  .hyun_button {
+	background:white;
+	background-color: white;
+	border-radius:10px;
+	border:1px solid white;
+	display:inline-block;
+	cursor:pointer;
+	font-size:14px;
+	text-decoration:none;
+}
+.hyun_button:hover {
+	background:skyblue;
+	background-color:skyblue;
+}
+.hyun_button:active {
+	position:relative;
+	top:1px;
+}
+/* 여기까지 검색창 */
+/* ======================= */
 
+/* 메인 박스와 검색창 붙이기 위함 */
+.hyun_mainbox {
+  padding-top: 0rem !important;
+}
+/* 글쓰기 */
+/* 사용x */
+.hyun_write {
+  float: left !important;
+	background:linear-gradient(to bottom, #000000 5%, #0a0a0a 100%);
+	background-color:#000000;
+	border-radius:30px;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+  font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+	/* font-family:Arial; */
+	font-size:15px;
+	text-decoration:none;
+  border: 0px;
+  margin-left: 15px !important;
+}
+.hyun_write:hover {
+	background:linear-gradient(to bottom, #0a0a0a 5%, #000000 100%);
+	background-color:#0a0a0a;
+}
+.hyun_write:active {
+	position:relative;
+	top:1px;
+}
+/* delete 버튼  */
+.hyun_delete{
+  padding: 0.25rem 0.5rem  !important;
+  font-size: 0.875rem !important;
+  line-height: 1.5 !important;
+  border-radius: 0.2rem !important;
+}
 /*# sourceMappingURL=bootstrap.css.map */

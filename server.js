@@ -8,11 +8,15 @@ const bodyParser= require('body-parser');
 const bcrypt = require('bcrypt');
 const saltRounds = 10;
 const helmet = require('helmet');
+
 app.use(helmet());
 app.disable('x-powered-by');
+
 require('dotenv').config();
+
 app.use(express.static('public'));
 app.use(bodyParser.urlencoded({extended : true}));
+
 const MongoClient = require('mongodb').MongoClient;
 const port = process.env.PORT;
 var db;
@@ -21,6 +25,7 @@ app.listen( port, function(){
   console.log ('listening on port: '+port)
 });
 ////////////////////db연결
+console.log ('connect to DB')
 MongoClient.connect(process.env.DB_URL, {useUnifiedTopology: true },function(에러, client){
     if (에러) return console.log(에러);
 
