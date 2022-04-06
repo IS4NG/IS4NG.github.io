@@ -100,12 +100,14 @@
     </div>
   </div>
 
- <!--/ Contents START /-->
+ <!--/ Contents START - 글목록 부분 시작 /-->
  <section id="about" class="about-mf sect-pt4 route">
   <div class="container" >
     <br>
     <br>
+    <!-- 해당 글목록 제목 (공지사항 / 뉴스 등등..)-->
     <h2 class="hyun_center"><strong>공지사항</strong></h2>
+
     <!--검색창-->
     <!-- <a href="/announce/create" class="btn btn-info btn-outline-primary float-right hyun_write" role="button">글쓰기</a> -->
     <div class="container input-group mb-2 hyun_div">
@@ -113,7 +115,7 @@
       <button class="hyun_button"id="search"><i class="fa-solid fa-magnifying-glass" style="color: gray"></i></button>        
     </div>
 
-    <!--아래 EJS사용 글목록-->
+    <!-- EJS사용 글목록-->
     <!-- post list using EJS-->
     <div class="table-responsive-sm" >
       <table class="table table-hover" style="margin-bottom: 100px;">
@@ -135,7 +137,7 @@
             <tr>
               <td><%= i+1%></td>
               <td><a href = '/announce/detail/<%= 글목록[i]._id %>'><%= 글목록[i].title %></a></td>
-              <td><%= 글목록[i].time %></td>
+              <td>jun<%= 글목록[i].time %></td>
               <!-- Post할때 권한도 DB에 넣어 준 후 권한이 1인지 확인할 수 있게 만들었으면 좋을 것 같다 -->
               <% if(글목록[i].Author == "Hyeon-Stone" || 글목록[i].Author == "홧김에복전생" || 글목록[i].Author == "juntheworld"){ %>
               <td>관리자</td>
@@ -155,6 +157,7 @@
         </tbody>
       </table>
     </div>
+    
   <script src="/js/search.js"></script>
 
       <!-- JavaScript Libraries -->

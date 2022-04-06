@@ -9392,5 +9392,80 @@ ul.posts {
 
   }
 
+  /* 글목록 가운데 정렬 */
+  .hyun_center{
+    text-align: center;
+    margin-bottom: 50px !important;
+  }
+  /* 검색창  */
+  .hyun_searchbar{
+    display: block !important;
+    flex: none !important;
+    width:  88%!important;
+    border: 0;
+  }
+  .hyun_div{
+  padding: 0px !important;
+  background:white !important;
+	background-color: white !important;
+  width: 25% !important;  
+  border-radius: 5px !important;
+  margin-right: 15px !important;
+  }
+  .hyun_button {
+	background:white;
+	background-color: white;
+	border-radius:10px;
+	border:1px solid white;
+	display:inline-block;
+	cursor:pointer;
+	font-size:14px;
+	text-decoration:none;
+}
+.hyun_button:hover {
+	background:skyblue;
+	background-color:skyblue;
+}
+.hyun_button:active {
+	position:relative;
+	top:1px;
+}
+/* 여기까지 검색창 */
+/* ======================= */
 
+/* 메인 박스와 검색창 붙이기 위함 */
+.hyun_mainbox {
+  padding-top: 0rem !important;
+}
+/* 글쓰기 */
+/* 사용x */
+.hyun_write {
+  float: left !important;
+	background:linear-gradient(to bottom, #000000 5%, #0a0a0a 100%);
+	background-color:#000000;
+	border-radius:30px;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:15px;
+	text-decoration:none;
+  border: 0px;
+  margin-left: 15px !important;
+}
+.hyun_write:hover {
+	background:linear-gradient(to bottom, #0a0a0a 5%, #000000 100%);
+	background-color:#0a0a0a;
+}
+.hyun_write:active {
+	position:relative;
+	top:1px;
+}
+/* delete 버튼  */
+.hyun_delete{
+  padding: 0.25rem 0.5rem  !important;
+  font-size: 0.875rem !important;
+  line-height: 1.5 !important;
+  border-radius: 0.2rem !important;
+}
 /*# sourceMappingURL=bootstrap.css.map */
