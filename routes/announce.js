@@ -49,7 +49,7 @@ router.get('/announce', function(요청,응답){
     
     db.collection('counter').findOne({name:'posting'},function(에러, 결과){
         var 게시물갯수 = 결과.totalPost
-        db.collection('posting').insertOne( {_id: 게시물갯수 ,board : 요청.body.board, title : 요청.body.제목, time : 요청.body.time ,reference : 요청.body.reference, description : 요청.body.description, Author : 요청.user.닉네임} , function(에러, 결과){
+        db.collection('posting').insertOne( {_id: 게시물갯수 ,board : 요청.body.board, title : 요청.body.제목, time : 요청.body.time ,reference : 요청.body.reference, description : 요청.body.description, Author : 요청.user.닉네임, Power : 요청.user.권한} , function(에러, 결과){
             
             db.collection('counter').updateOne({name:'posting'},{ $inc : {totalPost:1}},function(에러,결과){
                 if(에러){return console.log(에러)}
