@@ -9,10 +9,8 @@ $('.delete').click(function(e){
         }).done(function(결과){
         //location.reload는 새로고침
         삭제할거.parent('li').fadeOut();
+        location.reload();
         }).fail(function(xhr, textStatus, errorThrown){
         alert('로그인하세요!');
         });
         })
-
-         
-   
