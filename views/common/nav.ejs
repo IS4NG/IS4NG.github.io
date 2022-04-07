@@ -21,9 +21,9 @@
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                 <% if(isAuthenticated){ %> <!--로그인하면 권한ㅇ-->
-                <a class="dropdown-item" href="https://docs.google.com/spreadsheets/d/1hH3dPN-poZnFjZo9dbNJWW3fzHlI6o3NJU44h24kF4s/edit?usp=sharing">Study 모집</a>
+                <a class="dropdown-item" href="https://docs.google.com/spreadsheets/d/1IDi3-kuhgU9kcxx3HOfXuZg4LA6s_GHYzoZ7C7czscY/edit#gid=0">Study 모집</a>
                 <% }else{%> <!--아니면 편집권한 권한x-->
-                  <a class="dropdown-item" href="/">Study 모집</a>
+                  <a class="dropdown-item" href="/noright">Study 모집</a>
                   <% }%>
                 <hr class="dropdown-divider">
                 <a class="dropdown-item" href="/Study/2022">2022</a>
@@ -37,7 +37,7 @@
                 <% if(isAuthenticated){ %> <!--로그인하면 권한ㅇ-->
                 <a class="dropdown-item" href='https://docs.google.com/spreadsheets/d/1FhRslRDF1l6rO4UlkImVmXIlhX9RqXVCoiUyJcjsJBU/edit#gid=0'>Project 모집</a>
                 <% }else{%> <!--아니면 편집권한 권한x-->
-                <a class="dropdown-item" href='/'>Project 모집</a>
+                <a class="dropdown-item" href='/noright'>Project 모집</a>
                 <% }%>
                 <hr class="dropdown-divider">
                 <a class="dropdown-item" href="/Project/2022">2022</a>
