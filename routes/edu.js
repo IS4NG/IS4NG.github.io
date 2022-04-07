@@ -35,10 +35,12 @@ router.get('/edu', function(요청,응답){
 
   })
 
-  /*
+
   router.get('/edu/create',  로그인했니,function(요청,응답){
-    응답.render('./edu/create.ejs')
+    응답.render("./news/create.ejs")
+    // 응답.render('./edu/create.ejs')
   })
+
   router.post('/edu/post',로그인했니,function(요청,응답){
     let today = new Date();
     let year = today.getFullYear(); 
@@ -65,12 +67,10 @@ router.get('/edu', function(요청,응답){
 
 
   })
-  */
-
-  /*
+  
   router.get('/edu/detail/:id', function(요청, 응답){
     db.collection('posting').findOne({ _id : parseInt(요청.params.id) }, function(에러, 결과){
-        응답.render('./edu/edub.ejs', {data : 결과} )
+        응답.render('edu/edub.ejs', {data : 결과} )
     })
   });
   
@@ -84,6 +84,8 @@ router.get('/edu', function(요청,응답){
       }
     })
   });
+
+
   router.post('/edu/edit/put',function(요청,응답){
     let today = new Date();
     let year = today.getFullYear(); 
@@ -103,8 +105,5 @@ router.get('/edu', function(요청,응답){
 
   
   });
-   */
-
-
 
 module.exports = router;
