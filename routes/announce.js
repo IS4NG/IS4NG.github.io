@@ -65,7 +65,9 @@ router.get('/announce', function(요청,응답){
 
   router.get('/announce/detail/:id', function(요청, 응답){
     db.collection('posting').findOne({ _id : parseInt(요청.params.id) }, function(에러, 결과){
-      결과.description = markdown.toHTML(결과.description);  
+      결과.description = markdown.toHTML(결과.description);
+      응답.header("Content-Security-Policy", "img-src * ");
+      응답.header("Cross-Origin-Embedder-Policy", "credentialless");  
       응답.render('./announce/announceb.ejs', {data : 결과} )
     })
   });
