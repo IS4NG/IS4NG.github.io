@@ -137,7 +137,7 @@
             <tr>
               <td><%= i+1%></td>
               <td><a href = '/announce/detail/<%= 글목록[i]._id %>'><%= 글목록[i].title %></a></td>
-              <td><%= 글목록[i].time %></td>
+              <td><%= 글목록[i].time.split(" ")[0]%></td>
               <% if(글목록[i].Power == "1"){ %>
               <td>관리자</td>
               <% }else{ %>
