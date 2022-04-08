@@ -21,71 +21,65 @@
     </div>
   </div>
 
- <!--/ Contents START /-->
+ <!--/ Contents START - 글목록 부분 시작 /-->
  <section id="about" class="about-mf sect-pt4 route">
-  <div class="container">
-    <!-- 임시 삭제 - 교육자료 글쓰기 기능 -->
-    <!-- <a href="/edu/create" class="btn btn-info btn-outline-primary float-right" role="button">글쓰기</a> -->
+  <div class="container" >
+    <br>
+    <br>
+    <!-- 해당 글목록 제목 (공지사항 / 뉴스 등등..)-->
+    <h2 class="hyun_center"><strong>교육자료</strong></h2>
 
-    <!--아래 EJS사용 글목록-->
+    <!--검색창-->
+    <!-- <a href="/announce/create" class="btn btn-info btn-outline-primary float-right hyun_write" role="button">글쓰기</a> -->
+    <div class="container input-group mb-2 hyun_div">
+      <input class="form-control hyun_searchbar" id="search-input" placeholder="Search">
+      <button class="hyun_button"id="search"><i class="fa-solid fa-magnifying-glass" style="color: gray"></i></button>        
+    </div>
+
+    <!-- EJS사용 글목록-->
     <!-- post list using EJS-->
-    <section id="about" class="about-mf sect-pt4 route">
-      <div class="container">
-        <h4>글목록</h4>
-        <div class="row">
-          <div class="col-sm-12">
-            <div class="box-shadow-full"> 
-              <!-- post list -->
-              <ul class="posts">
-                <li>
-                  <article>
-                    <header> 
-                      <h4><a href = 'https://www.notion.so/b327328d8b2c4ab9800c3d8e28151d13'>기초반 교육일정 및 자료</a></h4>
-                    </header>
-                  </article>
-                </li>
-                <% if(isAuthenticated){ %>
-                  <li>
-                    <article>
-                      <header> 
-                        <h4><a href = 'https://www.notion.so/b327328d8b2c4ab9800c3d8e28151d13'> 기초반 강의메뉴얼 FOR 운영진</a></h4>
-                      </header>
-                    </article>
-                  </li>
+    <div class="table-responsive-sm" >
+      <table class="table table-hover" style="margin-bottom: 100px;">
+        <thead>
+          <tr>
+            <th>No</th>
+            <th>Title</th>
+            <th>Time</th>
+            <th>Author</th>
+            <% if(isAuthenticated){ %>
+            <th class="d-print-none">
+              <a class="btn btn-sm btn-success" href="/edu/create">Add</a>
+            </th>
+            <% }%>
+          </tr>
+        </thead>
+        <tbody>
+          <% for (var i= 0; i<글목록.length; i++){ %>
+            <tr>
+              <td><%= i+1%></td>
+              <td><a href = '/edu/detail/<%= 글목록[i]._id %>'><%= 글목록[i].title %></a></td>
+              <td><%= 글목록[i].time.split(" ")[0] %></td>
+              <!-- Post할때 권한도 DB에 넣어 준 후 권한이 1인지 확인할 수 있게 만들었으면 좋을 것 같다 -->
+              <% if(글목록[i].Power == "1"){ %>
+              <td>관리자</td>
+              <% }else{ %>
+              <td><%= 글목록[i].Author %></td>
+              <% }%>       
+              <% if(isAuthenticated){ %>
+                <% if(currentUser.닉네임 == 글목록[i].Author || currentUser.권한 == "1"){ %>
+                <td class="d-print-none">
+                  <a class="btn btn-sm btn-warning" href="/edu/edit/<%= 글목록[i]._id %>" role="button">Edit</a>
+                  <!-- delete 버튼 누르면 새로고침까지 되게 고쳐야 한다 -->
+                  <button type="submit" class="delete btn btn-danger hyun_delete "  data-id = "<%= 글목록[i]._id %>">Delete</button> 
+                  <script src = "../js/delete.js"></script><!-- Ajax사용 -->
+                </td>
                 <% }%>
-              </ul>
-              <!-- 
-                <% for (var i=0; i<글목록.length; i++){ %>
-                  <div class="news">
-                    <ul class="list-group">
-                      <li class="list-group-item">
-                        <article>
-                          <header>
-                            <h4><a href = '<%= 글목록[i].reference %>'> <%= i+1%>: <%= 글목록[i].title %></a></h4>
-                            <time class="published" datetime="2015-10-20">October 20, 2015</time>
-                          </header>
-                          <% if(isAuthenticated){ %>
-                            <a href="/Project/2022/edit/<%= 글목록[i]._id %>" class="btn btn-outline-success" role="button">Edit</a>
-                            <button type="submit" class="delete btn btn-danger "  data-id = "<%= 글목록[i]._id %>" >Delete</button>
-                            <script src = "../js/delete.js"></script>
-                          <% }%>
-                        </article>
-                      </li>
-                  </div> 
-                <% } %> 
-              -->
-
-
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>   
- 
-
-
-
-
+              <% }%>
+            </tr>
+          <% } %>
+        </tbody>
+      </table>
+    </div>
   </div>
 </section>
   <script src="/js/search.js"></script>

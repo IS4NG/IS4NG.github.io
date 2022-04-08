@@ -137,18 +137,20 @@
             <tr>
               <td><%= i+1%></td>
               <td><a href = '/announce/detail/<%= 글목록[i]._id %>'><%= 글목록[i].title %></a></td>
-              <td><%= 글목록[i].time %></td>
+              <td><%= 글목록[i].time.split(" ")[0]%></td>
               <% if(글목록[i].Power == "1"){ %>
               <td>관리자</td>
               <% }else{ %>
               <td><%= 글목록[i].Author %></td>
               <% }%>       
               <% if(isAuthenticated){ %>
-              <td class="d-print-none">
-                <a class="btn btn-sm btn-warning" href="/announce/edit/<%= 글목록[i]._id %>" role="button">Edit</a>
-                <button type="submit" class="delete btn btn-danger hyun_delete "  data-id = "<%= 글목록[i]._id %>">Delete</button> 
-                <script src = "../js/delete.js"></script><!-- Ajax사용 -->
-              </td>
+                <% if(currentUser.닉네임 == 글목록[i].Author || currentUser.권한 == "1"){ %>
+                <td class="d-print-none">
+                  <a class="btn btn-sm btn-warning" href="/announce/edit/<%= 글목록[i]._id %>" role="button">Edit</a>
+                  <button type="submit" class="delete btn btn-danger hyun_delete "  data-id = "<%= 글목록[i]._id %>">Delete</button> 
+                  <script src = "../js/delete.js"></script><!-- Ajax사용 -->
+                </td>
+                <% }%>
               <% }%>
             </tr>
           <% } %>

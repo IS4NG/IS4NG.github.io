@@ -28,17 +28,19 @@ router.get('/edu', function(요청,응답){
     console.log(요청.user);
 
     var searchquery = { board : 'edu'};
-    db.collection('posting').find(searchquery).toArray(function(에러, 결과){
+    db.collection('posting').find(searchquery).sort({_id:-1}).toArray(function(에러, 결과){
       console.log(결과);
         응답.render('./edu/edua.ejs', { 글목록 : 결과});
     });
 
   })
 
-  /*
+
   router.get('/edu/create',  로그인했니,function(요청,응답){
-    응답.render('./edu/create.ejs')
+    응답.render("./news/create.ejs")
+    // 응답.render('./edu/create.ejs')
   })
+
   router.post('/edu/post',로그인했니,function(요청,응답){
     let today = new Date();
     let year = today.getFullYear(); 
@@ -65,9 +67,7 @@ router.get('/edu', function(요청,응답){
 
 
   })
-  */
-
-  /*
+  
   router.get('/edu/detail/:id', function(요청, 응답){
     db.collection('posting').findOne({ _id : parseInt(요청.params.id) }, function(에러, 결과){
       결과.description = markdown.toHTML(결과.description);  
@@ -85,6 +85,8 @@ router.get('/edu', function(요청,응답){
       }
     })
   });
+
+
   router.post('/edu/edit/put',function(요청,응답){
     let today = new Date();
     let year = today.getFullYear(); 
@@ -104,8 +106,5 @@ router.get('/edu', function(요청,응답){
 
   
   });
-   */
-
-
 
 module.exports = router;
