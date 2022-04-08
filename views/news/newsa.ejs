@@ -48,7 +48,7 @@
             <th>Author</th>
             <% if(isAuthenticated){ %>
             <th class="d-print-none">
-              <a class="btn btn-sm btn-success" href="/Project/2022/create">Add</a>
+              <a class="btn btn-sm btn-success" href="/news/create">Add</a>
             </th>
             <% }%>
           </tr>
@@ -65,7 +65,7 @@
               <% }else{ %>
               <td><%= 글목록[i].Author %></td>
               <% }%>       
-              <% if(isAuthenticated){ %>
+              <% if((isAuthenticated && currentUser.닉네임 == 글목록[i].Author) || currentUser.권한 == "1"){ %>
               <td class="d-print-none">
                 <a class="btn btn-sm btn-warning" href="/news/edit/<%= 글목록[i]._id %>" role="button">Edit</a>
                 <!-- delete 버튼 누르면 새로고침까지 되게 고쳐야 한다 -->
