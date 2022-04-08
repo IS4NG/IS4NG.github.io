@@ -72,7 +72,7 @@ router.get('/Project/2022', function(요청,응답){
   router.get('/Project/2022/edit/:id', 로그인했니,function(요청, 응답){
     요청.body._id = parseInt(요청.params.id);
     console.log(요청.body._id);
-    var 수정할데이터 = {_id : 요청.body._id, Author:요청.user.닉네임}
+    var 수정할데이터 = {_id : 요청.body._id}
     db.collection('posting').findOne(수정할데이터, function(에러, 결과){
         if(에러||결과==null||결과==undefined||결과==NaN){응답.redirect('/noright');}else{
         응답.render('2022p/edit.ejs', {data : 결과} )
