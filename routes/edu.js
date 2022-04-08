@@ -2,7 +2,7 @@
 var router = require('express').Router();
 var db;
 require('dotenv').config();
-
+markdown=require('markdown').markdown;
 const MongoClient = require('mongodb').MongoClient;
 MongoClient.connect(process.env.DB_URL, {useUnifiedTopology: true },function(에러, client){
     if (에러) return console.log(에러);
@@ -70,7 +70,8 @@ router.get('/edu', function(요청,응답){
   /*
   router.get('/edu/detail/:id', function(요청, 응답){
     db.collection('posting').findOne({ _id : parseInt(요청.params.id) }, function(에러, 결과){
-        응답.render('./edu/edub.ejs', {data : 결과} )
+      결과.description = markdown.toHTML(결과.description);  
+      응답.render('./edu/edub.ejs', {data : 결과} )
     })
   });
   

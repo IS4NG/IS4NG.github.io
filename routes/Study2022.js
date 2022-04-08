@@ -1,6 +1,7 @@
 /////다른것도 이것처럼 나누긴해야함....
 var router = require('express').Router();
 var db;
+markdown=require('markdown').markdown;
 require('dotenv').config();
 
 const MongoClient = require('mongodb').MongoClient;
@@ -64,7 +65,8 @@ router.get('/Study/2022', function(요청,응답){
 
   router.get('/Study2022/detail/:id', function(요청, 응답){
     db.collection('posting').findOne({ _id : parseInt(요청.params.id) }, function(에러, 결과){
-        응답.render('2022s/2022b.ejs', {data : 결과} )
+      결과.description = markdown.toHTML(결과.description);
+      응답.render('2022s/2022b.ejs', {data : 결과} )
     })
   });
   
