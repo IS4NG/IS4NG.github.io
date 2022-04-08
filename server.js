@@ -201,7 +201,7 @@ app.use('/', require('./routes/archive.js')); //Archive
 
 app.delete('/delete',로그인했니 ,function(요청,응답){
   요청.body._id=parseInt(요청.body._id)
-  var 삭제할데이터 = {_id : 요청.body._id, Author:요청.user.닉네임}
+  var 삭제할데이터 = {_id : 요청.body._id}
   console.log(삭제할데이터);
   db.collection('posting').deleteOne(삭제할데이터, function(에러, 결과){
       console.log(결과);
