@@ -37,7 +37,7 @@ router.get('/edu', function(요청,응답){
 
 
   router.get('/edu/create',  로그인했니,function(요청,응답){
-    응답.render("./news/create.ejs")
+    응답.render("./edu/create.ejs")
     // 응답.render('./edu/create.ejs')
   })
 
