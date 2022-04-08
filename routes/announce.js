@@ -27,7 +27,7 @@ MongoClient.connect(process.env.DB_URL, {useUnifiedTopology: true },function(에
 router.get('/announce', function(요청,응답){
     console.log(요청.user);
     var searchquery = { board : 'announce'};
-    db.collection('posting').find(searchquery).toArray(function(에러, 결과){
+    db.collection('posting').find(searchquery).sort({_id:-1}).toArray(function(에러, 결과){
       console.log(결과);
         응답.render('./announce/announcea.ejs', { 글목록 : 결과});
     });
