@@ -143,12 +143,14 @@
               <% }else{ %>
               <td><%= 글목록[i].Author %></td>
               <% }%>       
-              <% if((isAuthenticated && currentUser.닉네임 == 글목록[i].Author) || currentUser.권한 == "1"){ %>
-              <td class="d-print-none">
-                <a class="btn btn-sm btn-warning" href="/announce/edit/<%= 글목록[i]._id %>" role="button">Edit</a>
-                <button type="submit" class="delete btn btn-danger hyun_delete "  data-id = "<%= 글목록[i]._id %>">Delete</button> 
-                <script src = "../js/delete.js"></script><!-- Ajax사용 -->
-              </td>
+              <% if(isAuthenticated){ %>
+                <% if(currentUser.닉네임 == 글목록[i].Author || currentUser.권한 == "1"){ %>
+                <td class="d-print-none">
+                  <a class="btn btn-sm btn-warning" href="/announce/edit/<%= 글목록[i]._id %>" role="button">Edit</a>
+                  <button type="submit" class="delete btn btn-danger hyun_delete "  data-id = "<%= 글목록[i]._id %>">Delete</button> 
+                  <script src = "../js/delete.js"></script><!-- Ajax사용 -->
+                </td>
+                <% }%>
               <% }%>
             </tr>
           <% } %>
