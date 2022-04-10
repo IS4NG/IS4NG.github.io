@@ -403,8 +403,9 @@ h6, .h6 {
 }
 
 .lead {
-  font-size: 1.25rem;
-  font-weight: 300;
+  font-size: 1.3rem;
+  font-weight: 200;
+  margin-bottom: 0.5rem;
 }
 
 .display-1 {

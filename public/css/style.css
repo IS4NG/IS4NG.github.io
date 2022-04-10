@@ -170,17 +170,34 @@ a:hover {
   margin-bottom: 3rem;
 }
 
+/* bar in index content  */
 .title-left {
-  font-size: 2rem;
+  font-size: 1.7rem;
   position: relative;
+  margin-bottom: 1.5rem;
 }
 
 .title-left:before {
   content: '';
   position: absolute;
   height: 3px;
-  background-color: #0078ff;
-  width: 100px;
+  background-color: #3091ff;
+  width: 140px;
+  bottom: -12px;
+}
+
+.title-center {
+  font-size: 1.7rem;
+  position: relative;
+  margin-bottom: 3rem;
+}
+
+.title-center:before {
+  content: '';
+  position: absolute;
+  height: 3px;
+  background-color: #48627c;
+  width: 140px;
   bottom: -12px;
 }
 
