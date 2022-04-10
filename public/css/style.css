@@ -938,13 +938,15 @@ a:hover {
 //--//-->   BLOG-SINGLE
 ======================================*/
 
+/* post-box for b post*/
 .post-box,
 .form-comments,
 .box-comments,
 .widget-sidebar {
   padding: 2rem;
   background-color: #fff;
-  margin-bottom: 3rem;
+  margin-bottom: 1rem;
+  line-height: 1.6;
 }
 
 .blog-wrapper .article-title {
@@ -1251,7 +1253,8 @@ footer .credits a {
   .form-comments,
   .box-comments,
   .widget-sidebar {
-    padding: 3rem;
+    padding: 0.5rem;
+    font-size: 1.25rem;
   }
 
   .blog-wrapper .article-title {

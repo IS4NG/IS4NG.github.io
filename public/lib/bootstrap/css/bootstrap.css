@@ -8757,6 +8757,8 @@ button.bg-dark:focus {
 /* font for post (2022b) */
 .text-monospace {
   font-family: 'Nanum Gothic', sans-serif;
+  font-size: 1.4rem;
+  line-height: 1.6;
 }
 
 .text-justify {
