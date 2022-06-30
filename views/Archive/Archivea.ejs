@@ -27,18 +27,23 @@
     <br>
     <br>
     <!-- 해당 글목록 제목 (공지사항 / 뉴스 등등..)-->
-    <h2 class="hyun_center"><strong>연구 아카이브</strong></h2>
+    <h2 class="hyun_center">
+      <strong>
+        <a href = "https://velog.io/@isang">연구 아카이브 바로가기</a> 
+      </strong>
+    </h2>
 
     <!--검색창-->
     <!-- <a href="/announce/create" class="btn btn-info btn-outline-primary float-right hyun_write" role="button">글쓰기</a> -->
-    <div class="container input-group mb-2 hyun_div">
+
+    <!-- <div class="container input-group mb-2 hyun_div">
       <input class="form-control hyun_searchbar" id="search-input" placeholder="Search">
       <button class="hyun_button"id="search"><i class="fa-solid fa-magnifying-glass" style="color: gray"></i></button>        
-    </div>
+    </div> -->
 
     <!-- EJS사용 글목록-->
     <!-- post list using EJS-->
-    <div class="table-responsive-sm" >
+    <!-- <div class="table-responsive-sm" >
       <table class="table table-hover" style="margin-bottom: 100px;">
         <thead>
           <tr>
@@ -58,9 +63,10 @@
             <tr>
               <td><%= i+1%></td>
               <td><a href = '/Archive/detail/<%= 글목록[i]._id %>'><%= 글목록[i].title %></a></td>
-              <td><%= 글목록[i].time.split(" ")[0] %></td>
+              <td><%= 글목록[i].time.split(" ")[0] %></td> -->
+
               <!-- Post할때 권한도 DB에 넣어 준 후 권한이 1인지 확인할 수 있게 만들었으면 좋을 것 같다 -->
-              <% if(글목록[i].Power == "1"){ %>
+              <!-- <% if(글목록[i].Power == "1"){ %>
               <td>관리자</td>
               <% }else{ %>
               <td><%= 글목록[i].Author %></td>
@@ -68,11 +74,14 @@
               <% if(isAuthenticated){ %>
                 <% if(currentUser.닉네임 == 글목록[i].Author || currentUser.권한 == "1"){ %>
                 <td class="d-print-none">
-                  <a class="btn btn-sm btn-warning" href="/Archive/edit/<%= 글목록[i]._id %>" role="button">Edit</a>
+                  <a class="btn btn-sm btn-warning" href="/Archive/edit/<%= 글목록[i]._id %>" role="button">Edit</a> -->
+
                   <!-- delete 버튼 누르면 새로고침까지 되게 고쳐야 한다 -->
-                  <button type="submit" class="delete btn btn-danger hyun_delete "  data-id = "<%= 글목록[i]._id %>">Delete</button> 
-                  <script src = "../js/delete.js"></script><!-- Ajax사용 -->
-                </td>
+                  <!-- <button type="submit" class="delete btn btn-danger hyun_delete "  data-id = "<%= 글목록[i]._id %>">Delete</button> 
+                  <script src = "../js/delete.js"></script> -->
+                  
+                  <!-- Ajax사용 -->
+                <!-- </td>
                 <% }%>
               <% }%>
             </tr>
@@ -82,9 +91,10 @@
     </div>
   </div>
   
-  <script src="/js/search.js"></script>
+  <script src="/js/search.js"></script> -->
   <!-- 하부파트 종료 -->
-
+  
+  <!-- link to velog  -->
   <!-- JavaScript Libraries -->
       
   <script src="/lib/jquery/jquery-migrate.min.js"></script>
