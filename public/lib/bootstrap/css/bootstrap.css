@@ -603,8 +603,8 @@ pre code {
   display: flex;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  margin-right: -15px;
-  margin-left: -15px;
+  margin-right: 5%;
+  margin-left: 5%;
 }
 
 .no-gutters {
@@ -907,6 +907,11 @@ pre code {
     max-width: 91.666667%;
   }
   .col-sm-12 {
+    -ms-flex: 0 0 100%;
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+  .col-sm-jun {
     -ms-flex: 0 0 100%;
     flex: 0 0 100%;
     max-width: 100%;
@@ -9075,6 +9080,8 @@ ul.posts {
     -webkit-flex-direction: row-reverse;
     -ms-flex-direction: row-reverse;
     flex-direction: row-reverse;
+    /*for test*/
+    background-color: #002752;
   }
 
     ul.posts article .image {
@@ -9119,7 +9126,7 @@ ul.posts {
     border-left: 0;
     border-right: 0;
     left: -3em;
-    width: calc(100% + (3em * 2));
+    width: 100%;
   }
 
     .post > header {
@@ -9278,12 +9285,12 @@ ul.posts {
     border: 0;
   }
   .hyun_div{
-  padding: 0px !important;
-  background:white !important;
-	background-color: white !important;
-  width: 25% !important;  
-  border-radius: 5px !important;
-  margin-right: 15px !important;
+    padding: 0px !important;
+    background:white !important;
+    background-color: white !important;
+    width: 25% !important;  
+    border-radius: 5px !important;
+    margin-right: 15px !important;
   }
   .hyun_button {
 	background:white;
@@ -9343,3 +9350,13 @@ ul.posts {
   border-radius: 0.2rem !important;
 }
 /*# sourceMappingURL=bootstrap.css.map */
+
+/* nav  
+.jun_nav{
+  background-color: #002752;
+  padding: 0.25rem 0.5rem;
+}
+*/
+.jun_post {
+  font-size: 1.15rem;
+}
