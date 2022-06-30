@@ -18,8 +18,9 @@
     </div>
   </div>
   
-  <!-- Post -->
+  <!-- Post (게시판 글) -->
   <article class="post">
+    <!-- post_header (게시판 글 제목) -->
     <header>
       <div class="title">
         <h2><b><a href="#"><%= data.title %></a></b></h2>
@@ -31,22 +32,21 @@
       </div>
     </header>
 
-  <section id="about" class="about-mf route">
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-jun">
-          <div class="box-shadow-full">
-            <%-data.description%>
+    <!-- post_content (게시판 글 내용) -->
+    <nav class="about-mf">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-jun">
+            <div class="box-shadow-full">
+              <%-data.description%>
+            </div>
           </div>
         </div>
+        <!-- <a href="/Project/2022" class="btn btn-outline-success" role="button">돌아가기</a>  -->
       </div>
-    </div>
-  </section>
-    <!-- 
-    <div class ="text-break text-monospace text-xl-left" style="white-space: pre-wrap"><p><%-data.description%></p></div>
-     -->
-     
-    <a href="/Project/2022" class="btn btn-outline-success" role="button">돌아가기</a> 
+      
+    <nav>
+    
   </article>            
   
       <!-- JavaScript Libraries -->
