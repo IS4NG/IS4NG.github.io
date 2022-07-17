@@ -24,6 +24,7 @@ var db;
 app.listen( port, function(){
   console.log ('listening on port: '+port)
 });
+
 ////////////////////db연결
 console.log ('connect to DB')
 MongoClient.connect(process.env.DB_URL, {useUnifiedTopology: true },function(에러, client){
@@ -32,14 +33,7 @@ MongoClient.connect(process.env.DB_URL, {useUnifiedTopology: true },function(에
     db = client.db('IS')
     
   })
-
-
 ///////////////////포트설정
-
-
-
-
-  
 
   // Passport.js 세션관련///////////////////////////////////////////////////////////////////////////
   const passport = require('passport');
@@ -49,6 +43,7 @@ MongoClient.connect(process.env.DB_URL, {useUnifiedTopology: true },function(에
   app.use(session({name:'Login',secret : '비밀코드', resave : false , saveUninitialized : false}));
   app.use(passport.initialize());
   app.use(passport.session());
+  
   //요청과 응답 사이에 뭔가 실행되는 코드들 app.use(미들웨어), isAuthenticated()로 로그인한지아닌지 파악가능
 app.use(function(req,res,next){
   res.locals.isAuthenticated = req.isAuthenticated();
