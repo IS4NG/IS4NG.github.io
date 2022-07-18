@@ -24,6 +24,7 @@ var db;
 app.listen( port, function(){
   console.log ('listening on port: '+port)
 });
+console.log('서버가 열렸습니다.\nctrl + click으로 접속 \nhttp://localhost:' + port);
 ////////////////////db연결
 console.log ('connect to DB')
 MongoClient.connect(process.env.DB_URL, {useUnifiedTopology: true },function(에러, client){
