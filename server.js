@@ -24,6 +24,7 @@ var db;
 app.listen( port, function(){
   console.log ('listening on port: '+port)
 });
+
 ////////////////////db연결
 console.log ('connect to DB')
 MongoClient.connect(process.env.DB_URL, {useUnifiedTopology: true },function(에러, client){
@@ -32,8 +33,6 @@ MongoClient.connect(process.env.DB_URL, {useUnifiedTopology: true },function(에
     db = client.db('IS')
     
   })
-
-
 ///////////////////포트설정
 
 
