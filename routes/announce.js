@@ -23,15 +23,21 @@ MongoClient.connect(process.env.DB_URL, {useUnifiedTopology: true },function(에
   } 
 
 
-//test for heroku
-router.get('/announce', function(요청,응답){
+  //test for heroku
+  router.get('/announce', function(요청,응답){
     console.log(요청.user);
-    var searchquery = { board : 'announce'};
-    db.collection('posting').find(searchquery).sort({_id:-1}).toArray(function(에러, 결과){
-      console.log(결과);
-        응답.render('./announce/announcea.ejs', { 글목록 : 결과});
-    });
+    응답.render('./announce/announcea.ejs');
   })
+
+  // router.get('/announce', function(요청,응답){
+  //   console.log(요청.user);
+  //   var searchquery = { board : 'announce'};
+  //   db.collection('posting').find(searchquery).sort({_id:-1}).toArray(function(에러, 결과){
+  //     console.log(결과);
+  //       응답.render('./announce/announcea.ejs', { 글목록 : 결과});
+  //   });
+  // })
+
 
   router.get('/announce/create',  로그인했니,function(요청,응답){
     응답.render('./announce/create.ejs')
