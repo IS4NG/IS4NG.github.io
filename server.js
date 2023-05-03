@@ -18,7 +18,7 @@ app.use(express.static('public'));
 app.use(bodyParser.urlencoded({extended : true}));
 
 const MongoClient = require('mongodb').MongoClient;
-const port = process.env.PORT;
+const port = 80;//process.env.PORT;
 var db;
 
 app.listen( port, function(){
